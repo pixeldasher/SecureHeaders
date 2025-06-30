@@ -101,6 +101,7 @@ class SecureHeaders extends WireData implements Module
                 $this->cspNonce = bin2hex(random_bytes(16));
                 $this->config->set('cspNonce', $this->cspNonce);
 
+                $event->return = preg_replace('#nonce=(["\'])proxy["\']#', "nonce=\"{$this->cspNonce}\"", $event->return);
                 $policyString = str_replace('nonce-proxy', "'nonce-{$this->cspNonce}'", $policyString);
             }
 

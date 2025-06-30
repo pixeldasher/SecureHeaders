@@ -63,7 +63,7 @@ class SecureHeadersConfig extends ModuleConfig
             [
                 'type' => 'fieldset',
                 'label' => 'Content Security Policy (CSP)',
-                'icon' => 'user-shield',
+                'icon' => 'shield',
                 'description' => __("Der mächtigste Header zur Abwehr von Cross-Site-Scripting (XSS) und Dateneinschleusungs-Angriffen. Er legt fest, welche Ressourcen (Skripte, Bilder, etc.) von welchen Quellen geladen werden dürfen.\n**Warnung:** Eine fehlerhafte Konfiguration kann die Website unzugänglich machen. Neue Richtlinien sollten ggf. im 'Report-Only'-Modus getestet werden.\n[MDN-Dokumentation](https://developer.mozilla.org/de/docs/Web/HTTP/Headers/Content-Security-Policy)"),
                 'collapsed' => false,
                 'children' => [

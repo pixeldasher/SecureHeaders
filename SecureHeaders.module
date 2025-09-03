@@ -94,7 +94,7 @@ class SecureHeaders extends WireData implements Module
         // --- 1. Build and Set Content-Security-Policy ---
         if (!empty($conf['csp_enabled'])) {
             $cspHeaderName = !empty($conf['csp_report_only']) ? 'Content-Security-Policy-Report-Only' : 'Content-Security-Policy';
-            $policyString = trim($conf['csp_policy'] ?? '');
+            $policyString = str_replace(["\n", "\r"], ' ', trim($conf['csp_policy'] ?? ''));
             $cspParts = [];
 
             if (strpos($policyString, 'nonce-proxy') !== false) {
@@ -105,8 +105,9 @@ class SecureHeaders extends WireData implements Module
                 $policyString = str_replace('nonce-proxy', "nonce-{$this->cspNonce}", $policyString);
             }
 
-            if ($policyString)
+            if ($policyString) {
                 $cspParts[] = $policyString;
+            }
 
             if (stripos($policyString, 'frame-ancestors') === false) {
                 $framingPolicy = $conf['framing_policy'] ?? 'none';

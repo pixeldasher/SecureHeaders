@@ -31,14 +31,14 @@ class SecureHeaders extends WireData implements Module
             'version' => '1.0.0',
             'summary' => 'Verwaltet HTTP-Sicherheits-Header für das Frontend basierend auf gängigen Standards.',
             'href' => 'https://github.com/pixeldasher/SecureHeaders',
-            'author' => 'Phillip "pixeldasher" Issner',
+            'author' => 'Phillip Issner',
             'singular' => true,
             'permission' => 'site-security',
             'icon' => 'shield',
             'autoload' => 'template!=admin',
             'requires' => [
                 'PHP>=8.3',
-                'ProcessWire>=3.0.249'
+                'ProcessWire>=3.0.246'
             ],
         ];
     }

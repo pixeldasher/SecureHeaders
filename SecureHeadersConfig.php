@@ -162,6 +162,7 @@ class SecureHeadersConfig extends ModuleConfig
                             '' => __('Nicht gesetzt'),
                             'unsafe-none' => 'unsafe-none',
                             'require-corp' => 'require-corp',
+                            'credentialless' => 'credentialless',
                         ],
                         'value' => '',
                         'notes' => __('Warnung: `require-corp` kann das Laden von Bildern, Skripten und Stilen verhindern, wenn diese nicht die korrekten Cross-Origin-Header (CORP oder CORS) senden.'),

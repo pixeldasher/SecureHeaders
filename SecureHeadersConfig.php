@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Hochwarth;
-
-use ProcessWire\ModuleConfig;
+namespace ProcessWire;
 
 use function ProcessWire\__;
 
